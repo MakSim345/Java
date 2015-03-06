@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+   <project name="Hello World Project" default="info">
+    <path id="project-classpath">
+        <pathelement location="."/>
+        <pathelement location="${build}"/>
+        <pathelement location="${classes}"/>
+    </path>
+
+   <target name="info">
+      <echo>Hello World - Welcome to Apache Ant!</echo>
+   </target>
+
+   <target name="compile">
+        <mkdir dir="build/classes"/>
+        <!-- Print directly in the console -->
+        <echo message="Compilation start...." />
+        <javac srcdir="src" destdir="build/classes"/>
+        <echo message="Compilation complete." />
+    </target>
+
+    <target name="run">
+        <!-- Print directly in the console -->
+        <echo message="Here we will run the main app:" />
+        <java classname="oata.HelloWorld" classpath="build/classes"/>
+    </target>
+
+    <target name="run4">
+        <java classname="oata.HelloWorld" fork="yes" >
+            <classpath refid="project-classpath"/>
+        </java>
+     </target>
+
+    <target name="run2">
+        <java jar="build/jar/HelloWorld.jar" fork="true"/>
+    </target>
+
+
+</project>
+
