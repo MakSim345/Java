@@ -7,3 +7,5 @@
 *.vim
 *.log
 
+/JavaApp01/nbproject/private/
+/JavaApp01/build/
